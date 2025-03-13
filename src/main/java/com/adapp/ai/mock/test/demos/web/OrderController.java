@@ -19,29 +19,24 @@ public class OrderController {
         return null;
     }
 
-    @AIMock
-    @PostMapping("/addBatch")
-    public Result<List<Order>> addBatch(@RequestBody List<Order> orders) {
+    @AIMock("订单删除")
+    @PostMapping("/delete")
+    public Result<Void> addBatch(@RequestParam("id") Long id) {
         return null;
     }
 
-    @AIMock
+    @AIMock("订单详情")
     @GetMapping("/detail")
     public Result<Order> detail(@RequestParam("id") Long id) {
         return null;
     }
 
-    @AIMock
+    @AIMock("订单分页查询")
     @GetMapping("/page")
     public PageResult<Order> page(@RequestBody PageDTO pageDTO) {
         return null;
     }
 
-    @AIMock
-    @GetMapping("/list")
-    public Result<List<Order>> list() {
-        return null;
-    }
 
     @Data
     public static class Order {

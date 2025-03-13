@@ -19,27 +19,27 @@ public class MedicineController {
         return null;
     }
 
-    @AIMock
-    @PostMapping("/addBatch")
-    public Result<List<Medicine>> addBatch(@RequestBody List<Medicine> medicines) {
+    @AIMock("药品更新")
+    @PostMapping("/update")
+    public Result<Medicine> update(@RequestBody Medicine medicine) {
         return null;
     }
 
-    @AIMock
-    @GetMapping("/detail")
-    public Result<Medicine> detail(@RequestParam("id") Long id) {
+    @AIMock("药品删除")
+    @PostMapping("/delete")
+    public Result<Void> delete(@RequestParam("id") Long id) {
         return null;
     }
 
-    @AIMock
+    @AIMock("药品详情")
+    @GetMapping("/detail/{id}")
+    public Result<Medicine> detail(@PathVariable("id") Long id) {
+        return null;
+    }
+
+    @AIMock("药品分页查询")
     @GetMapping("/page")
     public PageResult<Medicine> page(@RequestBody PageDTO pageDTO) {
-        return null;
-    }
-
-    @AIMock
-    @GetMapping("/list")
-    public Result<List<Medicine>> list() {
         return null;
     }
 
@@ -47,13 +47,13 @@ public class MedicineController {
     @Data
     public static class Medicine {
         @AIMock("药品名称")
-        private String id;
+        private String name;
         @AIMock("药品禁忌症")
         private List<String> contraindications;
         @AIMock("药品相互作用")
         private List<String> interactions;
         @AIMock("药品价格")
-        private List<Price> prices;
+        private Price price;
 
         @Data
         public static class Price {
