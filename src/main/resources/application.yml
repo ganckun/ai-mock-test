@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+ai:
+  mock:
+    enabled: true
+    qwen:
+      app-id: 9a75c471d377425eaa1df9cb0344b6cf
+      api-key: sk-0bbe353352f34ab89487832fe46579e8

@@ -1,12 +1,16 @@
 package com.adapp.ai.mock.test.demos.common;
 
+import com.dbapp.ai.mock.annotation.AIMock;
 import com.dbapp.ai.mock.enums.ErrorEnum;
 import lombok.Data;
 
 @Data
 public class Result<T> {
+    @AIMock(description = "状态码，失败时返回-1，成功时返回200")
     private Integer code;
+    @AIMock(description = "错误信息，失败时返回错误信息，成功时返回success")
     private String message;
+    @AIMock(description = "业务数据")
     private T data;
 
     public Result() {
